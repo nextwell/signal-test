@@ -4,7 +4,7 @@
 module.exports = (app, arr) => {
 	app.get('/api/post/:value', (req, res) => {
 		
-		let value = parseInt(req.params.value);
+		let value = parseInt(req.params.value);		// принимаем значение
 
 		arr.push(value);	// добавляет в массив последний сигнал
 

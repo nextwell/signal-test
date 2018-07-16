@@ -40,15 +40,18 @@ server.listen(cfg['IO_PORT']);
 
 io.on('connection', (socket) => {
 	console.log(`User connected`);
-	let newarr = arr.slice(Math.max(arr.length - 3, 1));
+
+	// Проверяем при коннекте, возможно массив сигналов уже не пустой
+	
+	let newarr = arr.slice(Math.max(arr.length - 3, 0));
 
 	if ( newarr[0] == 1 && newarr[1] == 2 & newarr[2] == 3){
 			console.log(true);
-			io.emit('event', {action: true});
+			io.emit('event', {action: true});	// Сигналы 1 2 3
 		}
 		else if ( newarr[0] == 3 && newarr[1] == 2 & newarr[2] == 1 ){
 			console.log(false);
-			io.emit('event', {action: false});
+			io.emit('event', {action: false});	// Сигналы 3 2 1
 		}
 
 	socket.on('disconnect', () => {
@@ -58,4 +61,4 @@ io.on('connection', (socket) => {
 });
 
 
-app.io = io;
+app.io = io;	// Отправляем сообщения из роутера

@@ -6,10 +6,10 @@ $(document).ready(function(){
 	});
 	socket.on('event', (event) => {
 	    if ( event.action == true){
-	    	$('.hdimg').show();
+	    	$('.hdimg').show();		// показываем картинку
 	    }
 	    else {
-	    	$('.hdimg').hide();
+	    	$('.hdimg').hide();		// убираем картинку
 	    }
 	});
 

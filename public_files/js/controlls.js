@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('button').click(function(){
 		var value = $(this).html();
-		fetch('/api/post/' + value);
+		fetch('/api/post/' + value);	// Просто запрос к api
 	})
 })
