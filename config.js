@@ -1,4 +1,4 @@
 module.exports = {
-	"PORT": 8080,
+	"PORT": 8000,
 	"IO_PORT": 8081
 }
